@@ -1,0 +1,74 @@
+\begin{thebibliography}{}
+
+\bibitem[CHI~10]{chinesta2010use}
+\textsc{Chinesta F.}, \textsc{Ammar A.}\andname{}\textsc{Cueto E.}, \guilo{}On
+  the use of proper generalized decompositions for solving the multidimensional
+  chemical master equation\guilf{},
+\newblock \textit{European Journal of Computational Mechanics/Revue
+  Europ{\'e}enne de M{\'e}canique Num{\'e}rique}, \volumename{}19,
+  \numbername{}1-3,  \pagesname 53--64, Taylor \& Francis, 2010.
+
+\bibitem[CHI~11]{chinesta2011overview}
+\textsc{Chinesta F.}, \textsc{Ammar A.}, \textsc{Leygue
+  A.}\andname{}\textsc{Keunings R.}, \guilo{}An overview of the proper
+  generalized decomposition with applications in computational
+  rheology\guilf{},
+\newblock \textit{Journal of Non-Newtonian Fluid Mechanics}, \volumename{}166,
+  \numbername{}11,  \pagesname 578--592, Elsevier, 2011.
+
+\bibitem[CHI~13]{chinesta2013pgd}
+\textsc{Chinesta F.}, \textsc{Leygue A.}, \textsc{Bordeu F.}, \textsc{Aguado
+  J.}, \textsc{Cueto E.}, \textsc{Gonzalez D.}, \textsc{Alfaro I.},
+  \textsc{Ammar A.}\andname{}\textsc{Huerta A.}, \guilo{}PGD-based
+  computational vademecum for efficient design, optimization and
+  control\guilf{},
+\newblock \textit{Archives of Computational Methods in Engineering},
+  \volumename{}20, \numbername{}1,  \pagesname 31--59, Springer, 2013.
+
+\bibitem[FOL~12]{FPIMR12-CMSB}
+\textsc{Folschette M.}, \textsc{Paulev\'{e} L.}, \textsc{Inoue K.},
+  \textsc{Magnin M.}\andname{}\textsc{Roux O.}, \guilo{}Concretizing the
+  Process Hitting into Biological Regulatory Networks\guilf{},
+\newblock \Inname{}\textsc{Gilbert D.}\andname{}\textsc{Heiner M.},
+  \editornames{}, \textit{Computational Methods in Systems Biology}, Lecture
+  Notes in Computer Science,  \pagesname 166--186, Springer Berlin Heidelberg,
+  2012.
+
+\bibitem[FOL~13]{FPMR13-CS2Bio}
+\textsc{Folschette M.}, \textsc{Paulev{\'e} L.}, \textsc{Magnin
+  M.}\andname{}\textsc{Roux O.}, \guilo{}Under-approximation of reachability in
+  multivalued asynchronous networks\guilf{},
+\newblock \textit{Electronic Notes in Theoretical Computer Science},
+  \volumename{}299,  \pagesname 33 - 51, 2013,
+\newblock 4th International Workshop on Interactions between Computer Science
+  and Biology (CS2Bio'13).
+
+\bibitem[KAU~69]{kauffman1969metabolic}
+\textsc{Kauffman S.~A.}, \guilo{}Metabolic stability and epigenesis in randomly
+  constructed genetic nets\guilf{},
+\newblock \textit{Journal of theoretical biology}, \volumename{}22,
+  \numbername{}3,  \pagesname 437--467, Elsevier, 1969.
+
+\bibitem[{P}AU~11]{PMR10-TCSB}
+\textsc{{P}aulev{\'e} L.}, \textsc{{M}agnin M.}\andname{}\textsc{{R}oux O.},
+  \guilo{}Refining Dynamics of Gene Regulatory Networks in a Stochastic
+  $\pi$-Calculus Framework\guilf{},
+\newblock \Inname{}\textit{Transactions on Computational Systems Biology XIII},
+   \pagesname 171-191, Springer, 2011.
+
+\bibitem[SAH~09]{Sahin09}
+\textsc{Sahin O.}, \textsc{Frohlich H.}, \textsc{Lobke C.}, \textsc{Korf U.},
+  \textsc{Burmester S.}, \textsc{Majety M.}, \textsc{Mattern J.},
+  \textsc{Schupp I.}, \textsc{Chaouiya C.}, \textsc{Thieffry D.},
+  \textsc{Poustka A.}, \textsc{Wiemann S.}, \textsc{Beissbarth
+  T.}\andname{}\textsc{Arlt D.}, \guilo{}Modeling ERBB receptor-regulated G1/S
+  transition to find novel targets for de novo trastuzumab resistance\guilf{},
+\newblock \textit{BMC Systems Biology}, \volumename{}3, \numbername{}1, 2009.
+
+\bibitem[THO~91]{thomas1991regulatory}
+\textsc{Thomas R.}, \guilo{}Regulatory networks seen as asynchronous automata:
+  a logical description\guilf{},
+\newblock \textit{Journal of Theoretical Biology}, \volumename{}153,
+  \numbername{}1,  \pagesname 1--23, Elsevier, 1991.
+
+\end{thebibliography}
