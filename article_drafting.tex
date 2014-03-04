@@ -16,6 +16,8 @@
 \usetikzlibrary{arrows}
 \usetikzlibrary{positioning}
 \usepackage{stmaryrd}
+
+
 \begin{document}
 
 \section{Introduction}
@@ -251,10 +253,46 @@ While simulation run time grows linearly with each element, 40 times longer sinc
 
 \end{figure} 
 
+
 \section{Conclusion and Final Remarks}
 In the case of gene regulatory networks, there are many reasons why a modeler might choose the application of qualitative methods, one of which is Process Hitting. Process Hitting offers many advantages for large scale, which are often the more realistic, systems in the form of static analysis tools. These analysis tools alone, however, cannot provide the complete and intuitive solution of the system as a full probability distribution for each state over time. By translating Process Hitting actions to Markov equations, we are able to treat a system of PDEs directly. Proper Generalized Decomposition has proven efficient in solving Process Hitting models. As opposed to simulation techniques, which have been historically been the preferred methodology, PGD can provide full solutions, including multiple unknown paramters, with a single run. Here, we have shown some of the potential of this method, applying a combination of static analysis and numerical tools in order to maximize the expressiveness and understnading of a qualitative model. Only the basic elements of Process Hitting have been incorporated into the Markov equations considered, that is, actions with simple rate laws. Including temporal and varied stochastic features into these equations would further increase its potential.
 
-\bibliographystyle{ouvrage-hermes}
 \bibliography{biblio}
+
+\appendix
+\section{The ErbB Signaling Pathway}
+For this work, we used a Boolean model of the ErbB signaling pathway for the regulation of G1/S cell cycle transition as developed by \cite{Sahin09}. In this article, the authors began by constructing a model from the literature, then proceeded to refine the model via network reconstruction. Although these refinements proved useful in the selection of novel targets for gene therapy, we would like to focus on the initial derivation of the model in which all reactions correspond to cited regulations. However, we will use the logical rules suggested within this article for the refinement of the Process Hitting model via cooperative sorts, shown in Table \ref{rules}.\\
+
+EGF (epidermal growth factor) binds to ErbB receptors, of which there are four structural variants, three thought to be involed in this network. These receptors are functional when they form heterodimers, excluding ErbB1 which is able to function as a homodimer as well. Functional receptors transmit signals to AKT1, an apoptosis-inhibiting transmitter, and MEK1, a protein kinase. Along with transcription factors c-MYC and ER-$\alpha$, these entities downregulate kinase inhibitors p21 and p27 while upregulating the cyclins (CycE1 and CycD1) needed to activate their respective cyclin dependent kinases (CDK). These CDKs will work to phosphoralize, and therefore inactivate, the retinoblastoma protein (pRB). Only when this protein is inactive can the E2F group of transcriptional factors required for DNA replication and, therefore, cell proliferation. Although the interaction between CDKs and pRBs is inhibitive, we have kept the activations as indicated by the authors, using pRB as a proxy for it's following and more interesting product, E2F. In addition, we have included the logical rule proposed for Cyclin D presented in their work.
+\begin{table}[h]
+ \centering
+ \resizebox{0.8\textwidth}{!}{
+\begin{tabular}{c|l}
+  \hline
+    \textbf{Target} & \textbf{Logical Rule} \\
+  \hline
+  \\
+    ERBB1-2 & ERBB1 \land ERBB2 \\
+    ERBB1-3 & ERBB1 \land ERBB3 \\
+ERBB2-3 & ERBB2 \land ERBB3 \\
+IGF1R & (ER-$\alpha$ \lor AKT1)\lor \neg ErbB2-3\\
+ER-$\alpha$ & AKT1 \lor MEK1\\
+c-MYC & AKT1 \lor MEK1 \lor ER-$\alpha$\\
+AKT1 & ErbB1 \lor ErbB1-2 \lor ErbB1-3 \lor ErbB2-3 \lor IGF1R\\
+MEK1 & ErbB1 \lor ErbB1-2 \lor ErbB1-3 \lor ErbB2-3 \lor IGF1R\\
+CDK2 & CycE1 \land \neg p21 \land \neg p27\\
+CDK2 & CycD1 \land \neg p21 \land \neg p27\\
+CycD1 & ER-$\alpha$ \land c-MYC \land (AKT1 \lor MEK1)\\
+p21 & Er-$\alpha$ \land \neg AKT1 \land \neg c-MYC \land \neg CDK4\\
+p27 & Er-$\alpha$ \land \neg CDK4 \land \neg CDK2 \land \neg AKT1 \land \neg c-MYC\\
+pRB & (CDK4 \land CDK6)\lor (CDK4 \land CDK6 \land CDK2)\\
+\hline
+\end{tabular}
+}
+\caption{The proposed logical rules for species with more than one regulator.}
+\label{rules}
+\end{table}
+
+\include{network_tikz}
 
 \end{document}
