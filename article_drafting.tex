@@ -229,26 +229,25 @@ The Markov Equations of the Process Hitting actions provide a system of PDEs to 
  
 \begin{figure}[h!]
 \centering
- \includegraphics[width=0.5\textwidth]{singular_full.jpg}
+ \includegraphics[width=0.5\textwidth]{errors.jpg}
  \caption{Error inherent in the model decreases with the increased incorporation of combined state spaces. In this case, error is judged as the Euclidian distance from the averaged results of simulation for 1000 trials.}
  \label{error_coop}
 \end{figure}
 
-The solutions that we obtain from PGD are approximations of the full probability distribution corresponding to the Markov Equations created by Process Hitting. From these probability distributions, we are able to make fast analysis of global behaviors of the system: rather than being limited to asking the questions answerable using static analysis, a modeler can watch the system evolve through time and make general statements on the qualitative behavior. Previously undetectable elements such as limit cycles can be found, as well as temporal features. \todo{include example from results.}
+The solutions that we obtain from PGD are approximations of the full probability distribution corresponding to the Markov Equations created by Process Hitting. From these probability distributions, we are able to make fast analysis of global behaviors of the system: rather than being limited to asking the questions answerable using static analysis, a modeler can watch the system evolve through time and make general statements on the qualitative behavior.}
 
 \subsection{Incorporation of Unknown Parameters}\label{parameter}
 It is often the case, especially in a growing field such as geneomics, that elements of a regulatory network are disputed or unknown. Researchers may come to very different conclusions about the parameters which fit a particular system. With simulation techniques, each new set of parameters requires a full repetition of all of the trials, limiting the modeler and leading to ad hoc choices made for the sake of feasibility. However, PGD offers a simple way of incorporating these unknown parameters directly into the model, making it possible to obtain an approximative solution for a range of values all at once\cite{chinesta2010use}. The parameter is encoded as one of the separable spaces and is included at the cost of one dimension added to the overall solution space. For our example, perhaps one of the regulating reactions is difficult to study separately from the system as a whole, say, interactions involving p27 and p21. Unlike the first half of the directed graph which is simply an activation cascade, these proteins are involved in both inhibiting and activating relationships, so changes to their rate laws should more greatly influence the final expression of pRB. We would like to incorporate many potential values of the action firing rate $r$ into our model, anywhere between two times faster and two times slower than the other reactions in the system. In order to do so, our decomposition of $\Phi(z,t)$ is changed slightly in order to accommodate the parameter for the range of possible values discretized into tenths:
 \[
  \Phi(z,t,r)\cong \sum_{j=1}^{M}F_1^j(z_1)\cdots F_{N_{sp}}^j(z_{N_{sp}})F_t(t)F_r(r)
 \]
-While simulation run time grows linearly with each element, 40 times longer since there are 40 values in the discretization, to obtain a result, we are able to derive a solution in \todo{X} by using PGD. In figure \ref{compare_par}, we see three solutions for the protein pRB given different values of the parameter $r$.
+While simulation run time grows linearly with each element, 40 times longer since there are 40 values in the discretization, to obtain a result, we are able to derive a solution in relatively equal time using PGD. In figure \ref{compare_par}, we see three solutions for the protein pRB given different values of the parameter $r$.
 
 \begin{figure}[h!]
 \centering
- \includegraphics[width=0.3\textwidth]{pgd_normal.jpg}
-  \includegraphics[width=0.3\textwidth]{pgd_normal.jpg}
- \includegraphics[width=0.3\textwidth]{pgd_normal.jpg}
- \caption{Change in the behavior of pRB given different values for the firing rates of any interaction involving the proteins p21 or p27. We imagine a scenario in which these behaviors cannot be studied separately from the system at large, and therefore must be estimated or incorporated into the model as parameters themselves. Considering that the value could be anywhere between two times slower or two times faster than the rates of the other interactions, we include functions of $r$, $F(r)$, into the decomposition of $\Phi$. Here, we see three samples of the resulting PGD solution for the output protein pRB: $1.8$ times slower (left), equal rates (center), and $1.8$ times faster (right).}
+ \includegraphics[width=\textwidth]{pRBresults.jpg}
+
+ \caption{Change in the behavior of pRB given different values for the firing rates of any interaction involving the proteins p21 or p27. We imagine a scenario in which these behaviors cannot be studied separately from the system at large, and therefore must be estimated or incorporated into the model as parameters themselves. Considering that the value could be anywhere between two times slower or two times faster than the rates of the other interactions, we include functions of $r$, $F(r)$, into the decomposition of $\Phi$. Here, we see two such samples of the resulting PGD solution for the output protein pRB: $1.5$ times slower (left) and $1.5$ times faster (right). In the right hand case, we can see that the dynamics allow the protein to become active in a shorter amount of time, a non-obvious result as inhibiting interactions of p27 and p21 also become faster.}
   \label{compare_par}
 
 \end{figure} 
@@ -256,7 +255,7 @@ While simulation run time grows linearly with each element, 40 times longer sinc
 
 \section{Conclusion and Final Remarks}
 In the case of gene regulatory networks, there are many reasons why a modeler might choose the application of qualitative methods, one of which is Process Hitting. Process Hitting offers many advantages for large scale, which are often the more realistic, systems in the form of static analysis tools. These analysis tools alone, however, cannot provide the complete and intuitive solution of the system as a full probability distribution for each state over time. By translating Process Hitting actions to Markov equations, we are able to treat a system of PDEs directly. Proper Generalized Decomposition has proven efficient in solving Process Hitting models. As opposed to simulation techniques, which have been historically been the preferred methodology, PGD can provide full solutions, including multiple unknown paramters, with a single run. Here, we have shown some of the potential of this method, applying a combination of static analysis and numerical tools in order to maximize the expressiveness and understnading of a qualitative model. Only the basic elements of Process Hitting have been incorporated into the Markov equations considered, that is, actions with simple rate laws. Including temporal and varied stochastic features into these equations would further increase its potential.
-
+\bibliographystyle{ieeetr}
 \bibliography{biblio}
 
 \appendix

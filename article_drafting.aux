@@ -1,8 +1,10 @@
 \relax 
+\citation{pauleve2011tuning}
+\citation{pauleve2011tuning}
 \@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}}
-\citation{thomas1991regulatory}
 \citation{kauffman1969metabolic}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Creating a Process Hitting action. In gene regulation, we consider two kinds of interactions between species: activation and inhibition. If $a$ is an activator of $b$, it is common to represent this by a signed, directed graph (left). These interactions have a characteristic form: unlike kinetic reactions, activation and inhibition usually depend on the regulator passing some threshold concentration in order to become effective (middle). Process Hitting (right) represents these reactions via actions: $a_1$ hits $b_0$ to bounce to $b_1$, indicated by a bold arrow. Generalized dynamics attempts to create the most permissive dynamics possible for the directed graph. Therefore, the absence of $a$ effectively acts as an inhibitor, adding the action $a_0$ hits $b_1$ to bounce to $b_0$, indicated by the light arrow. In order to fully express this behavior, we associate each action with a given rate law.\relax }}{2}}
+\citation{thomas1991regulatory}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Creating a Process Hitting action. In gene regulation, we consider two kinds of interactions between species: activation and inhibition. If $a$ is an activator of $b$, it is common to represent this by a signed, directed graph (left). These interactions have a characteristic form: unlike kinetic reactions, activation and inhibition usually depend on the regulator passing some threshold concentration in order to become effective (middle). Process Hitting (right) represents these reactions via actions: $a$ activates $b$ becomes $a_1$ hits (solid arrow) $b_0$ to bounce (bashed arc) to $b_1$. Generalized dynamics attempts to create the most permissive dynamics possible for the directed graph. Therefore, the absence of $a$ effectively acts as an inhibitor, adding the action $a_0$ hits $b_1$ to bounce to $b_0$. Every action can be associated with temporal and stochastic parameters-- the reaction rate, for example \cite  {pauleve2011tuning}.\relax }}{2}}
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
 \newlabel{PH_fig}{{1}{2}}
 \@writefile{toc}{\contentsline {section}{\numberline {2}Methodologies}{2}}
@@ -11,37 +13,45 @@
 \citation{FPMR13-CS2Bio}
 \citation{PMR10-TCSB}
 \citation{PMR10-TCSB}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Refinement of a model via Cooperative Sorts. Generalized dynamics are unable to express logical gates in which multiple species exhibit combined effects on a target, such as $a\wedge \neg b$. In order to add these combined interactions, we must refine the Process Hitting model with cooperative sorts. Here, we have created the cooperative sort $ab$ which is updated by $a$ and $b$ such that it reflects the current state of the system.\relax }}{3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Refinement of a model via Cooperative Sorts. Here, $a$ is an activator of $c$ while $b$ inhibits $c$. The generalized dynamics of the system have been constructed on the left. But what should happen in the case that both $a$ and $b$ are present? According to the left hand model, the system will oscillate. If we know more about how the system should function, however, we would like to be able to include this information into our model. With general dynamics, we are unable to express logical gates in which multiple species exhibit deterministic combined effects on a target, such as $a\wedge \neg b$, or the presence of the activator without the presence of the inhibitor. In order to add this combined interaction and eliminate the oscillatory behavior, we must refine the Process Hitting model with a cooperative sort, $ab$. This sort will handle the interactions of $a$ and $b$ on $c$ while leaving the original species to interact with other elements as before. In exchange, more actions must be added such that $a$ and $b$ can effectively update $ab$ so that it truly reflects the current state of both elements. In our example, the action $ab_{1,1}$ only hits $c_1$, and c experiences no change. \relax }}{3}}
 \newlabel{PH_coop}{{2}{3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Treating Qualitative Systems with Numerical Techniques}{3}}
 \citation{chinesta2011overview}
 \citation{chinesta2013pgd}
-\citation{Sahin09}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Treating Qualitative Systems with Numerical Techniques}{4}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Proper Generalized Decomposition}{4}}
 \newlabel{PGD}{{2.3}{4}}
-\citation{FPIMR12-CMSB}
 \citation{Sahin09}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Decomposition of a state space. This illustration shows how a multidimensional space, for example, a cubic space of three dimensions, $3^3$ can be decomposed into the product of the individual dimensions, $3\times 3$. This mathematical property is exploited by PGD in that we search for the individual vectors which are of relatively small size, never touching the full state space. In such a way, we move from $N_{sp}^N$ to $M(N\times N_{sp})$, as $M$ sets of these vectors must be found.\relax }}{5}}
+\newlabel{cubes}{{3}{5}}
 \@writefile{toc}{\contentsline {section}{\numberline {3}Application to a Biological Network}{5}}
 \newlabel{bio_application}{{3}{5}}
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Results for ErbB models using generalized dynamics and a refinement with cooperative sorts. In order to be considered a functioning model, no signal should be able to propagate when the system is universally inactive, including the input EGF, indicated by $EGF_0$. However, in the presence of EGF, $EGF_1$, pRB should be able to activate. We see that, while the generalized dynamics were able to propagate a signal from EGF to pRB, it was not able to prevent sporadic activation of pRB, nor find any fixed points.\relax }}{5}}
-\newlabel{egf}{{1}{5}}
-\citation{chinesta2010use}
+\citation{FPIMR12-CMSB}
+\citation{Sahin09}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Cooperative Sorts in the context of PGD}{6}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Incorporation of Unknown Parameters}{6}}
-\newlabel{parameter}{{3.2}{6}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Error inherent in the model decreases with the increased incorporation of combined state spaces. In this case, error is judged as the Euclidian distance from the averaged results of simulation for 1000 trials.\relax }}{7}}
-\newlabel{error_coop}{{3}{7}}
-\@writefile{toc}{\contentsline {section}{\numberline {4}Conclusion and Final Remarks}{7}}
-\bibstyle{ouvrage-hermes}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Results for ErbB models using generalized dynamics and a refinement with cooperative sorts. Here, the two models were tested using two three sanity checks related to our biological understanding of the system: the presence of fixed points, the lack of impossible behaviors and the presence of demonstrated behaviors. In order to be considered a functioning model, pRB should remain at rest when the system is universally inactive, including the absence of input protein EGF. However, in the presence of EGF, a signal should be able to propagate through the system, potentially activating pRB. We see that, while the generalized dynamics were able to propagate a signal from EGF to pRB (EGF present), it was not able to prevent sporadic activation of pRB in a system at rest (EGF absent), nor find any fixed points.\relax }}{7}}
+\newlabel{egf}{{1}{7}}
+\citation{chinesta2010use}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Error inherent in the model decreases with the increased incorporation of combined state spaces. In this case, error is judged as the Euclidian distance from the averaged results of simulation for 1000 trials.\relax }}{8}}
+\newlabel{error_coop}{{4}{8}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Incorporation of Unknown Parameters}{8}}
+\newlabel{parameter}{{3.2}{8}}
+\bibstyle{ieeetr}
 \bibdata{biblio}
-\bibcite{chinesta2010use}{CHI\nobreakspace  {}10}
-\bibcite{chinesta2011overview}{CHI\nobreakspace  {}11}
-\bibcite{chinesta2013pgd}{CHI\nobreakspace  {}13}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Change in the behavior of pRB given different values for the firing rates of any interaction involving the proteins p21 or p27. We imagine a scenario in which these behaviors cannot be studied separately from the system at large, and therefore must be estimated or incorporated into the model as parameters themselves. Considering that the value could be anywhere between two times slower or two times faster than the rates of the other interactions, we include functions of $r$, $F(r)$, into the decomposition of $\Phi $. Here, we see three samples of the resulting PGD solution for the output protein pRB: $1.8$ times slower (left), equal rates (center), and $1.8$ times faster (right).\relax }}{8}}
-\newlabel{compare_par}{{4}{8}}
-\bibcite{FPIMR12-CMSB}{FOL\nobreakspace  {}12}
-\bibcite{FPMR13-CS2Bio}{FOL\nobreakspace  {}13}
-\bibcite{kauffman1969metabolic}{KAU\nobreakspace  {}69}
-\bibcite{PMR10-TCSB}{{P}AU\nobreakspace  {}11}
-\bibcite{Sahin09}{SAH\nobreakspace  {}09}
-\bibcite{thomas1991regulatory}{THO\nobreakspace  {}91}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Change in the behavior of pRB given different values for the firing rates of any interaction involving the proteins p21 or p27. We imagine a scenario in which these behaviors cannot be studied separately from the system at large, and therefore must be estimated or incorporated into the model as parameters themselves. Considering that the value could be anywhere between two times slower or two times faster than the rates of the other interactions, we include functions of $r$, $F(r)$, into the decomposition of $\Phi $. Here, we see two such samples of the resulting PGD solution for the output protein pRB: $1.5$ times slower (left) and $1.5$ times faster (right). In the right hand case, we can see that the dynamics allow the protein to become active in a shorter amount of time, a non-obvious result as inhibiting interactions of p27 and p21 also become faster.\relax }}{9}}
+\newlabel{compare_par}{{5}{9}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Conclusion and Final Remarks}{9}}
+\bibcite{pauleve2011tuning}{1}
+\bibcite{kauffman1969metabolic}{2}
+\bibcite{thomas1991regulatory}{3}
+\bibcite{FPMR13-CS2Bio}{4}
+\bibcite{PMR10-TCSB}{5}
+\bibcite{chinesta2011overview}{6}
+\bibcite{chinesta2013pgd}{7}
+\bibcite{Sahin09}{8}
+\bibcite{FPIMR12-CMSB}{9}
+\bibcite{chinesta2010use}{10}
+\citation{Sahin09}
+\@writefile{toc}{\contentsline {section}{\numberline {A}The ErbB Signaling Pathway}{11}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces The proposed logical rules for species with more than one regulator.\relax }}{12}}
+\newlabel{rules}{{2}{12}}
+\@input{network_tikz.aux}

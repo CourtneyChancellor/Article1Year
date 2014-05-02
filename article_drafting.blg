@@ -1,46 +1,47 @@
 This is BibTeX, Version 0.99d (TeX Live 2012/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: article_drafting.aux
-The style file: ouvrage-hermes.bst
+The style file: ieeetr.bst
+A level-1 auxiliary file: network_tikz.aux
 Database file #1: biblio.bib
-You've used 9 entries,
-            2564 wiz_defined-function locations,
-            605 strings with 6490 characters,
-and the built_in function-call counts, 5008 in all, are:
-= -- 480
-> -- 253
-< -- 8
-+ -- 91
-- -- 90
-* -- 534
-:= -- 753
-add.period$ -- 9
-call.type$ -- 9
-change.case$ -- 80
-chr.to.int$ -- 9
-cite$ -- 9
-duplicate$ -- 197
-empty$ -- 322
-format.name$ -- 99
-if$ -- 1034
-int.to.chr$ -- 1
-int.to.str$ -- 0
-missing$ -- 9
-newline$ -- 40
-num.names$ -- 20
-pop$ -- 62
+You've used 10 entries,
+            1876 wiz_defined-function locations,
+            556 strings with 6148 characters,
+and the built_in function-call counts, 3445 in all, are:
+= -- 331
+> -- 167
+< -- 0
++ -- 59
+- -- 49
+* -- 278
+:= -- 507
+add.period$ -- 11
+call.type$ -- 10
+change.case$ -- 10
+chr.to.int$ -- 0
+cite$ -- 10
+duplicate$ -- 160
+empty$ -- 296
+format.name$ -- 49
+if$ -- 823
+int.to.chr$ -- 0
+int.to.str$ -- 10
+missing$ -- 10
+newline$ -- 34
+num.names$ -- 12
+pop$ -- 17
 preamble$ -- 1
-purify$ -- 89
+purify$ -- 0
 quote$ -- 0
-skip$ -- 183
+skip$ -- 117
 stack$ -- 0
-substring$ -- 283
-swap$ -- 82
-text.length$ -- 8
-text.prefix$ -- 9
+substring$ -- 251
+swap$ -- 74
+text.length$ -- 0
+text.prefix$ -- 0
 top$ -- 0
-type$ -- 72
+type$ -- 0
 warning$ -- 0
-while$ -- 41
-width$ -- 11
-write$ -- 120
+while$ -- 36
+width$ -- 12
+write$ -- 111
