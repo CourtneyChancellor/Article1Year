@@ -1,0 +1,90 @@
+
+ \begin{figure}
+\centering
+\resizebox{\textwidth}{!}{
+ \tikzstyle{circles}=[circle, minimum size = 10mm, thick, draw =black!80, fill = white!100, node distance = 3cm]
+  \tikzstyle{boxes}=[rectangle, minimum size = 10mm, thick, draw =black!80, fill = white!100, node distance = 3cm]
+
+  \begin{tikzpicture}[thick]
+  \node[boxes] (EGF) {EGF};
+  \node[boxes] (ErbB2) [below of=EGF] {ErbB2};
+   \node[boxes] (ErbB1) [left of=ErbB2] {ErbB1};
+  \node[boxes] (ErbB3) [right of=ErbB2] {ErbB3};
+  \node[boxes] (ErbB1-3) [below of=ErbB2, yshift=1cm] {ErbB1-3};
+  \node[boxes] (ErbB1-2) [left of=ErbB1-3, xshift=-1.5cm] {ErbB1-2};
+  \node[boxes] (ErbB2-3) [right of=ErbB1-3,xshift=1.5cm] {ErbB2-3};
+    \node[circles] (IGF1R) [right of=ErbB2-3] {IGF1R};
+  \node[circles] (AKT1) [below right of=ErbB1-2,yshift=-1cm] {AKT1};
+  \node[circles] (MEK1) [right of=AKT1,xshift=1cm] {MEK1};
+  \node[circles] (ERalpha) [below left of=AKT1, xshift=-1cm] {$ER-\alpha$};
+  \node[circles] (c-MYC) [below right of=MEK1,xshift=1.5cm] {c-MYC};
+  \node[circles] (CycD1) [below right of=ERalpha] {CycD1};
+  \node[circles] (p27) [right of=CycD1] {p27};
+  \node[circles] (p21) [right of=p27] {p21};
+  \node[circles] (CycE1) [right of=p21] {CycE1};
+  \node[circles] (CDK4) [below left of=p27] {CDK4};
+  \node[circles] (CDK6) [right of=CDK4] {CDK6};
+  \node[circles] (CDK2) [right of=CDK6] {CDK2};
+   \node[circles] (pRB) [below of=CDK6] {pRB};
+   
+ \path[->,>=angle 90,color=green]
+(EGF) edge (ErbB1)
+(EGF) edge (ErbB2)
+(EGF) edge (ErbB3)
+(ErbB1) edge (ErbB1-2)
+(ErbB1) edge (ErbB1-3)
+(ErbB2) edge (ErbB1-2)
+(ErbB2) edge (ErbB2-3)
+(ErbB3) edge (ErbB1-3)
+(ErbB3) edge (ErbB2-3)
+(ErbB1-2) edge (AKT1)
+(ErbB1) edge (AKT1)
+(ErbB1-3) edge (AKT1)
+(ErbB2-3) edge (AKT1)
+(IGF1R) edge (AKT1)
+(IGF1R) edge (MEK1)
+(ErbB1-2) edge (MEK1)
+(ErbB1-3) edge (MEK1)
+(ErbB2-3) edge (MEK1)
+(ErbB1) edge (MEK1)
+(ERalpha) edge (IGF1R)
+(AKT1) edge (IGF1R)
+(AKT1) edge (ERalpha)
+(MEK1) edge (ERalpha)
+(MEK1) edge (c-MYC)
+(AKT1) edge (c-MYC)
+(ERalpha) edge (c-MYC)
+(AKT1) edge (CycD1)
+(ERalpha) edge (CycD1)
+(MEK1) edge (CycD1)
+(c-MYC) edge (CycD1)
+(MEK1) edge (CycE1)
+(ERalpha) edge (p27)
+(CycD1) edge (CDK4)
+(CycD1) edge (CDK6)
+(CycE1) edge (CDK2)
+(CDK2) edge (pRB)
+(CDK4) edge (pRB)
+(CDK6) edge (pRB)
+;
+   
+  \path[-|, color=red]
+(ErbB2-3) edge (IGF1R)
+(AKT1) edge (p27)
+(AKT1) edge (p21)
+(c-MYC) edge (p27)
+(c-MYC) edge (p21)
+(p27) edge[bend left=10] (CDK4)
+(CDK4) edge[bend left=10] (p27)
+(CDK4) edge[bend left=10] (p21)
+(p21) edge[bend left=10] (CDK4)
+(p21) edge (CDK2)
+(p27) edge[bend left=10] (CDK2)
+(CDK2) edge[bend left=10] (p27)
+;  
+
+\end{tikzpicture}
+}
+\caption{Stuff}
+\label{network}
+\end{figure}
